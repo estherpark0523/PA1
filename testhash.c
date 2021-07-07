@@ -1,10 +1,10 @@
 /*
  * Filename: testhash
- * Author: TODO
- * Userid: TODO
+ * Author: Esther Park
+ * Userid: cs30s121be
  * Description: Unit test program to test the function hash().
- * Date: TODO
- * Sources of Help: TODO
+ * Date: 07/02/2021
+ * Sources of Help: none
  */
 
 #include <string.h>

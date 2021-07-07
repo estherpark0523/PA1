@@ -1,0 +1,43 @@
+
+/
+ * Filename: README
+ * Author: Esther Park
+ * Userid: cs30s121be
+ * Date: 07/02/2021
+ * Sources of help: none
+ */
+
+Description
+____________
+
+
+How to compile
+____________
+
+
+How to run the program
+____________
+
+Example of normal output
+____________
+
+Example of abnormal output
+____________
+
+Testing
+____________
+
+Questions
+____________
+
+1. You realized you made a spelling error when using one of the constants from the pa1.h file. Instead of DEFAULT_SIZE, you've been typing DEFAUL_SIZE (without the T). How would you find and replace all occurrences of DEFAUL_SIZE in your file to be DEFAULT_SIZE?
+
+2. What Git command(s) would you use to list files with changes since the last commit?
+
+3. What Git command would you use to undo a bad commit that has been already pushed?
+
+4. What Git command would you use to see the history of all your commits?
+The command to see my commit history is 'git log'. This command shows all the commits that have been made in the git repository.
+
+5. You finished the PA since you started early, but your friend hasn't and just started working on it even though it's due tonight at 11:59 pm. Your friend knows you are done with the PA and has asked you to help them so they can finish in time. What do you do to act with integrity?
+

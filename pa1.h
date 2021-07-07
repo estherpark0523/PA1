@@ -3,7 +3,10 @@
  * Description: Header file that contains function prototypes and
  *              constants.
  *
- * TODO Complete file header
+ * Author: Esther Park
+ * Userid: cs30121be
+ * Date: 07/02/2021
+ * Sources of help: None
  *
  * XXX Only add constants to this file at the bottom.
  * DO NOT EDIT FUNCTION PROTOTYPES OR PREDEFINED CONSTANTS
