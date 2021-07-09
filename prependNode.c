@@ -10,12 +10,15 @@
 
 #include <stdio.h>
 #include "pa1.h"
+#include "util.c"
 
 void prependNode(linkedListNode_t** head, char* str);
 
 void prependNode(linkedListNode_t** head, char* str) {
-	newLinkedListNoded();
-	strcp();
-
+	linkedListNode_t *newNode;
+	newNode	= newLinkedListNode();
+	newNode->value = strcp(str);
+	newNode->next = *head;
+	*head = newNode;
 
 }
