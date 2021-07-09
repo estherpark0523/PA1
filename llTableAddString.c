@@ -14,8 +14,9 @@
 void llTableAddString(linkedListNode_t** hashtbl, char* string);
 
 void llTableAddString(linkedListNode_t** hashtbl, char* string) {
-	int hashkey = hash(string) % size(hashtbl); !!! check how to find size of a linkedlistnode
-	prependNode(&hashtbl[index]);
-	return;
+	int hashkey = hash(string) % size;
+	prependNode(*hashtbl[index]);
+	//for (index = 0;  *hashtbl) {
+	//}
 }
 

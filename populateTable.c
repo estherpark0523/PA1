@@ -14,8 +14,11 @@
 void populateTable(linkedListNode_t** hashtbl, FILE* dataFile);
 
 void populateTable(linkedListNode_t** hashtbl, FILE* dataFile) {
-	fgets();
-	use strchr();
+	char buff[];
+
+	fgets(buff, int, dataFile);
+	
+	strchr();
 	to have case-sensitivity, call tolower() on every character of each string;
 	llTableAddString(hashtbl, result);
 	max length of email addresses is 30 characters
