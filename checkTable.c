@@ -14,10 +14,11 @@
 int checkTable(char* str, linkedListNode_t** hashtbl);
 
 int checkTable(char* str, linkedListNode_t** hashtbl) {
-	if (*retrieveLinkedList(hashtbl, str) != NULL) {
+	int len = strlen(str);
+	if (retrieveLinkedList(hashtbl, str) != NULL) {
 		// if the input string is also found in the linked list,
-		for (int i = 0; i < strlen(str); i++) {
-			if (strcmp(str, *hashtbl[i].value) == 0) {
+		for (int i = 0; i < len; i++) {
+			if (strcmp(str, *hashtbl[i]) == 0) {
 				return 1;
 			}
 		}

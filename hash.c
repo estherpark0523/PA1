@@ -18,12 +18,14 @@ unsigned int hash(char* str) {
 	int hashVal = HASH_START_VAL;
 	int len = strlen(str);
 
-	for (i = 0; i < len; i = i + 2) {
+	// For even indices
+	for (int i = 0; i < len; i = i + 2) {
 		hashVal = (hashVal * HASH_PRIME) + (int) str[i];
 	}
 
-	for (i = 1; i < len; i = i + 2) {
-		hashVal = (hashVal * HASH_PRIME) + (int) str[i];
+	// For odd indices
+	for (int j = 1; j < len; j = j + 2) {
+		hashVal = (hashVal * HASH_PRIME) + (int) str[j];
 	}
 	return hashVal;
 }

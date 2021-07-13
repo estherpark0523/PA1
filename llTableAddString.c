@@ -15,7 +15,7 @@ void llTableAddString(linkedListNode_t** hashtbl, char* string);
 
 void llTableAddString(linkedListNode_t** hashtbl, char* string) {
 	int index = hash(string) % DEFAULT_SIZE;
-	prependNode(*hashtbl[index]);
-	return;
+	linkedListNode_t ** head = &hashtbl[index];
+	prependNode(head, string);
 }
 
