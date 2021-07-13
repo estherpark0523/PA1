@@ -9,18 +9,28 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include "pa1.h"
 
 void populateTable(linkedListNode_t** hashtbl, FILE* dataFile);
 
 void populateTable(linkedListNode_t** hashtbl, FILE* dataFile) {
-	char buff[];
+	char buff[30];
+	char converted[30];
 
-	fgets(buff, int, dataFile);
-	
-	strchr();
-	to have case-sensitivity, call tolower() on every character of each string;
-	llTableAddString(hashtbl, result);
-	max length of email addresses is 30 characters
+	if (fgets(buff, 30, dataFile) != NULL) {
+		char * pointer = strchr(buff, '\n');
+		if (pointer != NULL) {
+			*pointer = '\0';
+		}
+		
+		for (int i = 0; i < 30; i++) {
+			converted[i] = tolower(buff[i]);
+		}
 
+		llTableAddString(hashtbl, converted);
+	}
+		
 }

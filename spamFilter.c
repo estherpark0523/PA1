@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 
 	if errors, {
 		fprintf(stderr, SHORT_USAGE);
-		return 0;
+		return 1;
 	}
 
 	if (argc == 0 || argc > 3) {
