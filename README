@@ -9,32 +9,44 @@
 
 Description
 ____________
-
+This program reads in email data files and checks the emails to see if they are in a list of spam addresses. This program hashes email data into a hashtable. The user will enter email addresses to check if they are spam by looking through the hashtable.
 
 How to compile
 ____________
-
+To compile the program, navigate to the directory containing the source files for PA1, in this case `pa1`. This directory should contain the Makefile. Type `make`, and the program should compile.
 
 How to run the program
 ____________
+This program takes 1-2 arguments. To run the program, type the executable name with either the `-h` flag or the `-i` flag followed by the directory containing emails that the user wants to check against the spam emails. For example:
+	./spamFilter -i ~/../public/emails/emails_100
 
 Example of normal output
 ____________
+Normal output is printed to stdout. Normal output can look like:
+
+cs30s121be@pi-cluster-111:~/pa1$ ./spamFilter -i ~/../public/emails/emails_100
+Enter a word:
+
 
 Example of abnormal output
 ____________
+Abnormal output is printed to stderr. Abnormal output can look like:
 
 Testing
 ____________
+This program was tested using the following test files: testhash.c, testprependNode.c, and testpopulateTable.c.
 
 Questions
 ____________
 
 1. You realized you made a spelling error when using one of the constants from the pa1.h file. Instead of DEFAULT_SIZE, you've been typing DEFAUL_SIZE (without the T). How would you find and replace all occurrences of DEFAUL_SIZE in your file to be DEFAULT_SIZE?
+The following command inside the file must be in normal mode, utilizing the :s, or substitute command. The command is: ':s/DEFAUL_SIZE/DEFAULT_SIZE/g'. This command searches all occurrences of the string 'DEFAUL_SIZE' and replaces each with 'DEFAULT_SIZE'. The `g` flag is how we are able to find/replace all occurrences.
 
 2. What Git command(s) would you use to list files with changes since the last commit?
+The git command to list files with changes since the last commit is `git diff --name-only`. This lists the names of files that have been changed since the last commit. These files have not been staged or prepared for a commit.
 
 3. What Git command would you use to undo a bad commit that has been already pushed?
+The git command to undo a bad commit that has already been pushed is `git revert`. This command essentially reverses the effects of the existing bad commit. There are options for the command in which the user can edit the commit message before reverting, revert a branch merge commit, etc. 
 
 4. What Git command would you use to see the history of all your commits?
 The command to see my commit history is 'git log'. This command shows all the commits that have been made in the git repository.

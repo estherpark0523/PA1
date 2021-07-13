@@ -14,6 +14,7 @@
 linkedListNode_t *retrieveLinkedList(linkedListNode_t** hashtbl, char* string);
 
 linkedListNode_t *retrieveLinkedList(linkedListNode_t** hashtbl, char* string) {
-	int hashkey = hash(string) % size of hashtbl;
-	return hashtbl[index];
+	int index = hash(string) % DEFAULT_SIZE;
+	return *hashtbl[index];
+
 }
