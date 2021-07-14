@@ -17,8 +17,10 @@ void testpopulateTable() {
 
   //TEST( hash( "abc" ) == 693737 );
   //TEST( hash( "paul" ) == 26452777 );
-  FILE * file;
+  FILE * file = fopen(&1, "r");
   linkedListNode_t ** hashtbl;
+  hashtbl = newLinkedListArray(50);
+ 
 
   populateTable(hashtbl, file);
 
