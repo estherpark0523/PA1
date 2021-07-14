@@ -8,21 +8,25 @@
  */
 
 #include <string.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 
 #include "test.h"    /* For TEST() macro and stdio.h */
 #include "pa1.h"
+#include "util.c"
 
 void testprependNode() {
 
-  linkedListNode_t ** hashtbl;
   linkedListNode_t ** head;
-  hashtbl = newLinkedListArray(DEFAULT_SIZE);
+  head = newLinkedListArray(5);
   *head = newLinkedListNode();
-  prependNode(head, "hello");
-  assert(*hashtbl.value == "hello");
+  (*head)->value = "abc";
 
+  char * str = "paul";
+  prependNode(head, str);
+
+  assert(hash((*head)->value) == 26452777);
 
 }
 

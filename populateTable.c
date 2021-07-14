@@ -23,7 +23,7 @@ void populateTable(linkedListNode_t** hashtbl, FILE* dataFile) {
 	while (fgets(buff, 30, dataFile) != NULL) {
 		// Find and remove newline characters by replacing them with a null character.
 		char * pointer = strchr(buff, '\n');
-		if (pointer != NULL) {
+		if ( pointer ) {
 			*pointer = '\0';
 		}
 		

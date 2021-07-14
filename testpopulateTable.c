@@ -9,20 +9,22 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <assert.h>
 
 #include "test.h"    /* For TEST() macro and stdio.h */
 #include "pa1.h"
 
 void testpopulateTable() {
 
-  //TEST( hash( "abc" ) == 693737 );
-  //TEST( hash( "paul" ) == 26452777 );
-  FILE * file = fopen(&1, "r");
+  FILE * file;
+  file = fopen("popTabTest.txt", "r");
   linkedListNode_t ** hashtbl;
-  hashtbl = newLinkedListArray(50);
+  hashtbl = newLinkedListArray(5);
  
-
   populateTable(hashtbl, file);
+
+  assert(checkTable("kitten@spam.me", hashtbl) == 1);
 
 
 }
