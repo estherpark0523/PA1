@@ -19,22 +19,49 @@ How to run the program
 ____________
 This program takes 1-2 arguments. To run the program, type the executable name with either the `-h` flag or the `-i` flag followed by the directory containing emails that the user wants to check against the spam emails. For example:
 	./spamFilter -i ~/../public/emails/emails_100
+	./spamFilter -h
 
 Example of normal output
 ____________
-Normal output is printed to stdout. Normal output can look like:
+Normal output is printed to stdout. Normal output can take either one or two arguments. With two arguments, normal output can look like:
 
 cs30s121be@pi-cluster-111:~/pa1$ ./spamFilter -i ~/../public/emails/emails_100
 Enter a word:
 
+With one argument, normal output looks like:
+
+cs30s121be@pi-cluster-111:~/pa1$ ./spamFilter -h
+
+Usage: ./spamFilter {-i dataFile | -h}
+    -i dataFile -- The file containing the data
+    -h          -- Displays this long usage message
+
 
 Example of abnormal output
 ____________
-Abnormal output is printed to stderr. Abnormal output can look like:
+Abnormal output is printed to stderr. This can occur if no or too many arguments are given. This can look like:
+
+cs30s121be@pi-cluster-111:~/pa1$ ./spamFilter
+Incorrect number of args.
+
+Usage: ./spamFilter {-i dataFile | -h}
+
+cs30s121be@pi-cluster-111:~/pa1$ ./spamFilter -i ~/../public/emails/emails_10 ~/../public/emails/emails_1000
+Incorrect number of args.
+
+Usage: ./spamFilter {-i dataFile | -h}
+
 
 Testing
 ____________
-This program was tested using the following test files: testhash.c, testprependNode.c, and testpopulateTable.c.
+This program was tested by using the provided executable pa1testspamFilter file. Both this file and spamFilter were executed with the same inputs, with their outputs being redirected to two different files, titled myOutfile and refOutfile. The outputs of both programs were compared using the `diff` command. If this command gave no outputs, it meant that there were no differences between the two program outputs.
+
+The two program inputs were tested with:
+	- Too few and too many arguments in the command line
+	- The correct number of arguments, but incorrect infile name
+	- A smaller and larger default size than the provided size of 2003
+
+Additionally, the hash(), populateTable(), and prependNode() functions were each unit tested in the respective testhash.c, testpopulateTable.c, and testprependNode.c files. These functions were tested to ensure that they performed accordingly.
 
 Questions
 ____________
