@@ -19,14 +19,15 @@ int main(int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
 	// Parse command line arguments 
-	char arg1, arg2;
+	char * arg1;
+	char * arg2;
 	linkedListNode_t ** hashtbl;
 	FILE * infile;
 
 	printf(USER_PROMPT);
-	scanf("%c %c", &arg1, &arg2);
+	scanf("%c %c", &(*arg1), &(*arg2));
 
-
+	
 	// Handling the number of arguments
 	
 	if (argc == 1) {
@@ -51,13 +52,15 @@ int main(int argc, char* argv[]) {
 
 	// Initializing and populating the hashtable.
 	hashtbl = newLinkedListArray(DEFAULT_SIZE);
-	populateTable(hashtbl, DEFAULT_SIZE);
+	prependNode(hashtbl, arg1);
+	hash(arg1);
+	populateTable(hashtbl, infile);
 
 	// Perform an interactive search
 	launchUserQuery(hashtbl);
 
 	cleanup(hashtbl);
 
-	fclose();
+	fclose(infile);
 
 }
