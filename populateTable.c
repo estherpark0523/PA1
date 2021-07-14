@@ -1,6 +1,6 @@
 /*
- * Filename: hash.c
- * Description: A function that will be used to create the hash key of a string.
+ * Filename: populateTable.c
+ * Description: A function that populates the hashtable by reading in the dataFile, grabbing each line, and adding each email address string to the table.
  * Author: Esther Park
  * Userid: cs30s121be
  * Date: 07/02/2021
@@ -18,19 +18,21 @@ void populateTable(linkedListNode_t** hashtbl, FILE* dataFile);
 
 void populateTable(linkedListNode_t** hashtbl, FILE* dataFile) {
 	char buff[30];
-	char converted[30];
+	int len = strlen(buff);
 
-	if (fgets(buff, 30, dataFile) != NULL) {
+	while (fgets(buff, 30, dataFile) != NULL) {
+		// Find and remove newline characters by replacing them with a null character.
 		char * pointer = strchr(buff, '\n');
 		if (pointer != NULL) {
 			*pointer = '\0';
 		}
 		
-		for (int i = 0; i < 30; i++) {
-			converted[i] = tolower(buff[i]);
+		// To account for case-sensitivity, lowercase every character of the string.
+		for (int i = 0; i < len; i++) {
+			buff[i] = tolower(buff[i]);
 		}
 
-		llTableAddString(hashtbl, converted);
+		llTableAddString(hashtbl, buff);
 	}
 		
 }
