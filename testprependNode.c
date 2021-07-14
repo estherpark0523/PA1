@@ -9,16 +9,20 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #include "test.h"    /* For TEST() macro and stdio.h */
 #include "pa1.h"
 
 void testprependNode() {
 
-  //TEST( hash( "abc" ) == 693737 );
-  //TEST( hash( "paul" ) == 26452777 );
-  //TEST( prependNode() == blank);
-  //TEST( prependNode() == something);
+  linkedListNode_t ** hashtbl;
+  linkedListNode_t ** head;
+  hashtbl = newLinkedListArray(DEFAULT_SIZE);
+  *head = newLinkedListNode();
+  prependNode(head, "hello");
+  assert(*hashtbl.value == "hello");
+
 
 }
 
