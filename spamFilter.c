@@ -21,17 +21,6 @@ int main(int argc, char* argv[]) {
 	linkedListNode_t ** hashtbl;
 	FILE * file;
 
-
-	file = fopen(argv[2], "r");
-
-	// Handling infile errors
-	if (file == NULL) {
-		perror(FILTER_ERR);
-		fclose(file);
-		return 1;
-	}
-
-	
 	// Handling the number of arguments
 	if (argc == 1) {
 		fprintf(stderr, LONG_USAGE);
@@ -41,6 +30,16 @@ int main(int argc, char* argv[]) {
 	if (argc != 2) {
 		fprintf(stderr, INVALID_ARGS);
 		fprintf(stderr, SHORT_USAGE);
+		return 1;
+	}
+
+
+	file = fopen(argv[2], "r");
+
+	// Handling infile errors
+	if (file == NULL) {
+		perror(FILTER_ERR);
+		fclose(file);
 		return 1;
 	}
 
