@@ -14,7 +14,6 @@
 
 #include "test.h"    /* For TEST() macro and stdio.h */
 #include "pa1.h"
-#include "util.c"
 
 void testprependNode() {
 
@@ -26,7 +25,7 @@ void testprependNode() {
   char * str = "paul";
   prependNode(head, str);
 
-  assert(strcmp((*head)->value, "paul") == 0);
+  assert((*head)->value == str);
 
 }
 
