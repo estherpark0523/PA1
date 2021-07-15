@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
 
 
 	// Handling infile errors
-	infile = fopen("spamFilter", "r");
+	infile = fopen("spamFilter.c", "r");
 	if (infile == NULL) {
 		perror(FILTER_ERR);
 		fclose(infile);
@@ -54,8 +54,8 @@ int main(int argc, char* argv[]) {
 
 	// Initializing and populating the hashtable.
 	hashtbl = newLinkedListArray(DEFAULT_SIZE);
-	prependNode(hashtbl, argv[2]);
-	hash(argv[2]);
+	prependNode(hashtbl, file);
+	hash(strings_in_file);
 	populateTable(hashtbl, infile);
 
 	// Perform an interactive search

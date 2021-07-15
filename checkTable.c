@@ -9,16 +9,21 @@
 
 
 #include <stdio.h>
+#include <string.h>
 #include "pa1.h"
 
 int checkTable(char* str, linkedListNode_t** hashtbl);
 
 int checkTable(char* str, linkedListNode_t** hashtbl) {
-	int len = strlen(str);
-	if (retrieveLinkedList(hashtbl, str) != NULL) {
+	int len;
+	int ret;
+        len = (int) strlen(str);
+
+	if ( retrieveLinkedList(hashtbl, str) ) {
 		// if the input string is also found in the linked list,
 		for (int i = 0; i < len; i++) {
-			if (strcmp(str, *hashtbl[i]) == 0) {
+			ret = strcmp(str, *hashtbl[i]);
+			if (ret == 0) {
 				return 1;
 			}
 		}
