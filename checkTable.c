@@ -16,13 +16,15 @@ int checkTable(char* str, linkedListNode_t** hashtbl);
 
 int checkTable(char* str, linkedListNode_t** hashtbl) {
 	int len;
-	int ret;
-        len = (int) strlen(str);
+        len = strlen(str);
+	linkedListNode_t * retrieved;
+	retrieved = retrieveLinkedList(hashtbl, str);
 
-	if ( retrieveLinkedList(hashtbl, str) ) {
+	if ( retrieved ) {
 		// if the input string is also found in the linked list,
-		for (int i = 0; i < len; i++) {
-			ret = strcmp(str, *hashtbl[i]);
+		while ( retrieved != NULL) {
+			int ret;
+		        ret = strcmp(str, retrieved->value);
 			if (ret == 0) {
 				return 1;
 			}

@@ -20,17 +20,20 @@ int main(int argc, char* argv[]);
 int main(int argc, char* argv[]) {
 	// Parse command line arguments 
 	linkedListNode_t ** hashtbl;
-	FILE * infile;
 	FILE * file;
 
 
-	// Ask the user to enter a word:
-	scanf("%c %c", argv[1], argv[2]);
 	file = fopen(argv[2], "r");
+
+	// Handling infile errors
+	if (file == NULL) {
+		perror(FILTER_ERR);
+		fclose(file);
+		return 1;
+	}
 
 	
 	// Handling the number of arguments
-	
 	if (argc == 1) {
 		fprintf(stderr, LONG_USAGE);
 		return 0;
@@ -43,27 +46,15 @@ int main(int argc, char* argv[]) {
 	}
 
 
-	// Handling infile errors
-	infile = fopen("spamFilter.c", "r");
-	if (infile == NULL) {
-		perror(FILTER_ERR);
-		fclose(infile);
-		return 1;
-
-	}
-
 	// Initializing and populating the hashtable.
 	hashtbl = newLinkedListArray(DEFAULT_SIZE);
-	prependNode(hashtbl, file);
-	hash(strings_in_file);
-	populateTable(hashtbl, infile);
+	populateTable(hashtbl, file);
 
 	// Perform an interactive search
 	launchUserQuery(hashtbl);
 
 	cleanup(hashtbl);
 
-	fclose(infile);
 	fclose(file);
 	
 
