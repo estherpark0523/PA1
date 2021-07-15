@@ -26,7 +26,7 @@ void testprependNode() {
   char * str = "paul";
   prependNode(head, str);
 
-  assert(hash((*head)->value) == 26452777);
+  assert(strcmp((*head)->value, "paul") == 0);
 
 }
 

@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include "pa1.h"
-#include "util.c"
 
 void prependNode(linkedListNode_t** head, char* str);
 

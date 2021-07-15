@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include "pa1.h"
 #include "pa1Strings.h"
-#include "util.c"
 
 int main(int argc, char* argv[]);
 
