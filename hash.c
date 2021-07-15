@@ -1,6 +1,5 @@
 /*
  * Filename: hash.c
- * Description: A function that will be used to create the hash key of a string.
  * Author: Esther Park
  * Userid: cs30s121be
  * Date: 07/02/2021
@@ -10,6 +9,17 @@
 
 #include <stdio.h>
 #include "pa1.h"
+
+/*
+ * Function Name: hash()
+ * Function Prototype: unsigned int hash(char* str);
+ * Description: A function that will be used to create the hash key of a string.
+ * Parameters: This function takes in str, which points to a char. This char will be hashed and converted.
+ * Side Effects: None
+ * Error Conditions: None
+ * Return value: This function returns an integer, which is the char parameter's hashkey.
+ */
+
 
 unsigned int hash(char* str);
 
